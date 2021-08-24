@@ -2,6 +2,10 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+  min-height: 800px;
+  height: auto !important;
 }
 
 .App-header {
@@ -22,3 +26,4 @@
   text-align: center;
   align-items: left;
 }
+html,body { height:100%; }

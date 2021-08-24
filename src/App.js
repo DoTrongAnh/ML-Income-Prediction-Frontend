@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -14,6 +15,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import BGI from './finance.jpg';
 
 const useStyles = makeStyles((theme) => ({
   button:  {
@@ -36,8 +38,9 @@ const useStyles = makeStyles((theme) => ({
   //  maxWidth: 360,
     overflow: 'auto',
     maxHeight: 300,
-   'margin-left': theme.spacing(30),
-   'margin-right': theme.spacing(30),
+    backdropFilter: "blur(10px)",
+   'margin-left': theme.spacing(70),
+   'margin-right': theme.spacing(70),
     border: `2px solid ${theme.palette.primary.main}`,
   }
 }));
@@ -83,7 +86,7 @@ function PersonForm(props){
     <div className={classes.button}>{message}</div>
     </DialogContent>
     <DialogActions>
-    <Button onClick={props.onClose}>Close</Button>
+    <Button variant="contained" color="secondary" onClick={props.onClose}>Close</Button>
     </DialogActions>
     </Dialog>);
 }
@@ -127,12 +130,15 @@ function PersonInput(props){
     setPerson(temp);
   };
   const handleSubmit = () => {
+    var record = {...person}
+    delete record.label;
+    alert(JSON.stringify(record));
     const link = 'http://127.0.0.1:8000/api/v1/income_classifier/predict';
     const contentType = 'application/json';
     const request = {
       method: 'POST',
       headers: {'Content-Type': contentType},
-      body: JSON.stringify(person)
+      body: JSON.stringify(record)
     };
     
     fetch(link, request)
@@ -349,23 +355,26 @@ function App() {
       };
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage:"url("+BGI+")"}}>
       <header className="App-header">
         Predict your income
       </header>
-      <h1>Will your income be above 50K anually?</h1>
+      
+      <div style={{"min-height":"100%"}}>
+      <h1 style={{color:"blue"}}>Will your income be above 50K anually?</h1>
       <br />
       <div>
       <List className={classes.list}>
         {persons.map((person, index) => {
           return (<ListItem button onClick={()=>openForm(index)} >
-            Person_{index+1}
+            <ListItemText style={{color:"purple"}} primary={"Person " + (index+1)} />
             </ListItem>);
         })}
       </List>
       </div>
       <div>
       <Button variant="contained" color="primary" onClick={handleButton}>Add new personal info</Button>
+      </div>
       </div>
       <PersonInput open={open} onClose={handleClose} />
       {persons.map((person, index) => <PersonForm color={pickColor(person)} open={opens[index]} onClose={closeForm} value={person} />)}
