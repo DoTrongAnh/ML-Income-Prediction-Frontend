@@ -1,29 +1,54 @@
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: space-between;
-  min-height: 800px;
-  height: auto !important;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 30vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+    html {
+      box-sizing: border-box;
+    }
 
-.App-link {
-  color: #61dafb;
-}
-.PersonInput {
-  text-align: center;
-  align-items: left;
-}
-html,body { height:100%; }
+    *, *::before, *::after {
+      box-sizing: inherit;
+      padding: 0;
+      margin: 0;
+    }
+
+    .app {
+      width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      background-color: black;
+    
+    }
+
+    nav ul li {
+      padding: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .current {
+      border-bottom: 4px solid white;
+    }
+
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+    .themed {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: center;
+      min-height: 800px;
+      height: auto !important;
+    }
