@@ -20,5 +20,14 @@ The personal info and prediction result are stored as an item in the list on the
 
 ![record](doc/img/PersonRecord.PNG)
 
+## Update (8/27/2021)
+Added React Router module so simulate a multi-page browsing experience. Also added a page to interact with `premium_insurance` endpoint. Now there are three pages in total, including the homepage.
+
+![home](doc/img/home.PNG)
+
+![income](doc/img/income.PNG)
+
+![insurance](doc/img/insurance.PNG)
+
 ## Future Activity
 - Create similar React webapps for each of the endpoints of the Django backend.
