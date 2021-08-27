@@ -30,4 +30,7 @@ Added React Router module so simulate a multi-page browsing experience. Also add
 ![insurance](doc/img/insurance.PNG)
 
 ## Future Activity
-- Create similar React webapps for each of the endpoints of the Django backend.
+- Create more pages for each machine learning endpoint from the backend.
+
+## Reference
+- Guide to use React Router v4: https://blog.pusher.com/getting-started-with-react-router-v4/
