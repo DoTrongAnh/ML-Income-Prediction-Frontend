@@ -29,6 +29,11 @@ Added React Router module so simulate a multi-page browsing experience. Also add
 
 ![insurance](doc/img/insurance.PNG)
 
+## Update (9/7/2021)
+Added a page to interact with `machine_translation` endpoint.
+
+![translate](doc/img/translate.PNG)
+
 ## Future Activity
 - Create more pages for each machine learning endpoint from the backend.
 
