@@ -18,6 +18,7 @@ const Navigation = () => (
           <li><NavLink exact activeClassName="current" to='/'>Home</NavLink></li>
           <li><NavLink exact activeClassName="current" to='/income_classiifier'>Income Classifier</NavLink></li>
           <li><NavLink exact activeClassName="current" to='/premium_insurance'>Premium Insurance</NavLink></li>
+          <li><NavLink exact activeClassName="current" to='/machine_translation'>Machine Translation</NavLink></li>
         </ul>
       </nav>
     );
